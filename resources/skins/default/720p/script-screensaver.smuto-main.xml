@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window type="window">
+    <controls>
+		<include>CommonBackground</include>
+        <control type="multiimage">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1280</width>
+            <height>720</height>
+            <imagepath background="true">plugin://plugin.image.artistmultifanart/?name=$INFO[MusicPlayer.Title]</imagepath>
+            <timeperimage>10000</timeperimage>
+            <randomize>true</randomize>
+            <fadetime>1000</fadetime>
+            <aspectratio>scale</aspectratio>
+            <visible>Player.HasAudio</visible>
+        </control>
+        <control type="multiimage">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1280</width>
+            <height>720</height>
+            <imagepath background="true">plugin://plugin.image.990px.random/</imagepath>
+            <timeperimage>10000</timeperimage>
+            <randomize>true</randomize>
+            <fadetime>1000</fadetime>
+            <aspectratio>scale</aspectratio>
+            <visible>!Player.HasAudio</visible>
+        </control>
+    </controls>
+</window>

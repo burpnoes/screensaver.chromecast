@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="screensaver.smuto" name="Smuto's Screensaver" version="0.1.0" provider-name="smuto">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0"/>
+        <import addon="plugin.image.artistmultifanart" version="2.0.3"/>
+        <import addon="plugin.image.990px.random" version="1.1.0"/>
+        <import addon="script.cu.lrclyrics" version="1.0.7"/>         
+    </requires>
+    <extension point="xbmc.ui.screensaver" library="screensaver.py" />
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <language/>
+        <website></website>
+        <source></source>
+        <forum></forum>
+        <email></email>
+        <summary lang="en"></summary>
+        <description lang="en"></description>
+    </extension>
+</addon>
