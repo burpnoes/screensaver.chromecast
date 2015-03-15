@@ -8,7 +8,7 @@
             <width>1280</width>
             <height>720</height>
             <imagepath background="true">plugin://plugin.image.chromecast/</imagepath>
-            <timeperimage>10000</timeperimage>
+            <timeperimage>300000</timeperimage>
             <randomize>true</randomize>
             <fadetime>1000</fadetime>
             <aspectratio>scale</aspectratio>
