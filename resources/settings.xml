@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+	<setting label="Display music info during audio playback" type="bool" id="music" default="true"/>
+	<setting type="sep"/>
+	<setting label="Show current date and time" type="bool" id="datetime" default="true"/>
+</settings>

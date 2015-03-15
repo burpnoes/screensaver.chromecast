@@ -29,6 +29,8 @@ addon = xbmcaddon.Addon()
 addon_name = addon.getAddonInfo('id')
 addon_path = addon.getAddonInfo('path')
 
+addon_music = addon.getSetting('music')
+addon_datetime = addon.getSetting('datetime')
 
 class Screensaver(xbmcgui.WindowXMLDialog):
 
@@ -40,23 +42,34 @@ class Screensaver(xbmcgui.WindowXMLDialog):
         def onScreensaverDeactivated(self):
             self.exit_callback()
 
+    def _set_prop(self, name, value):
+        self.winid.setProperty('slideview.%s' % name, value)
+        self.log('slideview.' + name + ' = ' + value)
+
+    def _clear_prop(self, name):
+        self.winid.clearProperty('slideview.%s' % name)
+        self.log('clear slideview.' + name)
+
     def onInit(self):
         self.abort_requested = False
         self.started = False
         self.exit_monitor = self.ExitMonitor(self.exit)
-        if xbmc.Player().isPlayingAudio():
-            xbmc.executebuiltin('RunScript(script.cu.lrclyrics)')
+        self.winid = xbmcgui.Window(xbmcgui.getCurrentWindowDialogId())
+        if addon_music == 'true':
+            self._set_prop('music', 'show')
+        if addon_datetime == 'true':
+            self._set_prop('datetime', 'show')
 
     def exit(self):
         self.abort_requested = True
         self.exit_monitor = None
-        if xbmc.Player().isPlayingAudio():
-            xbmc.executebuiltin('Action(Back)')
+        self._clear_prop('music')
+        self._clear_prop('datetime')
         self.log('exit')
         self.close()
 
     def log(self, msg):
-        xbmc.log(u'Smuto Screensaver: %s' % msg)
+        xbmc.log(u'Chromecast Screensaver: %s' % msg)
 
 
 if __name__ == '__main__':

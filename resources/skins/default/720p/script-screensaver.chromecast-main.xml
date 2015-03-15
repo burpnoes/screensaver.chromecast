@@ -19,12 +19,13 @@
             <top>5</top>
             <width>100</width>
             <height>20</height>
-            <label>$INFO[System.Time]</label>
             <font>font16</font>
             <align>right</align>
             <textcolor>FFFFFFFF</textcolor>
             <shadowcolor>FF000000</shadowcolor>
             <backgroundcolor>FF000000</backgroundcolor>
+            <label>$INFO[System.Time]</label>
+            <visible effect="fade" time="250">StringCompare(Window.Property(slideview.datetime),show)</visible>
         </control>
         <control type="label">
             <description>Date</description>
@@ -39,12 +40,13 @@
             <shadowcolor>FF000000</shadowcolor>
             <backgroundcolor>FF000000</backgroundcolor>
             <label>$INFO[System.Date]</label>
+            <visible effect="fade" time="250">StringCompare(Window.Property(slideview.datetime),show)</visible>
         </control>
         <control type="group">
             <posx>20</posx>
             <posy>160r</posy>
             <animation effect="fade" start="80" end="80" time="0" condition="true">Conditional</animation>
-            <visible>Player.HasAudio</visible>
+            <visible>Player.HasAudio + StringCompare(Window.Property(slideview.music),show)</visible>
             <control type="image">
                 <posx>0</posx>
                 <posy>0</posy>
